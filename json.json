@@ -1,0 +1,275 @@
+{
+  "Matched": 3,
+  "MatchId": "11663df5-8807-46bc-a538-0900a3b24b30.nakama",
+  "Data": {
+    "members": {
+      "Query": "* +label.MatchStatus:0",
+      "Members": [
+        "946acfef-1862-4702-9351-4ac7f47e59f6",
+        "6aa7b562-b636-4273-ba03-4e30321c9ea1",
+        "01bc6b8b-b8ad-4d99-b5d9-9bf47119c6f8"
+      ]
+    },
+    "r-matched": true,
+    "r-teams": [
+      {
+        "SessionId": "6ead364f-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 4
+      },
+      {
+        "SessionId": "6eb1eafb-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 4
+      },
+      {
+        "SessionId": "6eb06b00-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 4
+      },
+      {
+        "SessionId": "6eb05b32-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 5
+      },
+      {
+        "SessionId": "6eb209e4-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 5
+      },
+      {
+        "SessionId": "6eb5c2cf-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 5
+      },
+      {
+        "SessionId": "6eab5ce6-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 6
+      },
+      {
+        "SessionId": "6eafb6f1-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 6
+      },
+      {
+        "SessionId": "6eb1cbe8-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 6
+      },
+      {
+        "SessionId": "6eb0698c-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 7
+      },
+      {
+        "SessionId": "6eb02027-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 7
+      },
+      {
+        "SessionId": "6eb1f44a-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 7
+      },
+      {
+        "SessionId": "6eab4a27-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 8
+      },
+      {
+        "SessionId": "6eab635e-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 8
+      },
+      {
+        "SessionId": "6eacd0ee-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 8
+      },
+      {
+        "SessionId": "6e94d009-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 9
+      },
+      {
+        "SessionId": "6eab15ad-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 9
+      },
+      {
+        "SessionId": "6eacc9de-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 9
+      },
+      {
+        "SessionId": "6eafb7fc-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 10
+      },
+      {
+        "SessionId": "6eb14d6d-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 10
+      },
+      {
+        "SessionId": "6eb1e590-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 10
+      },
+      {
+        "SessionId": "6eb05729-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 11
+      },
+      {
+        "SessionId": "6eb05ea5-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 11
+      },
+      {
+        "SessionId": "6eab51d5-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 11
+      },
+      {
+        "SessionId": "6eab66a7-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 12
+      },
+      {
+        "SessionId": "6eab6db5-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 12
+      },
+      {
+        "SessionId": "6eafd230-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 12
+      },
+      {
+        "SessionId": "6eab77bd-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 13
+      },
+      {
+        "SessionId": "6eacc58c-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 13
+      },
+      {
+        "SessionId": "6eb0564e-04ef-11ee-95aa-006100a0eb06",
+        "TeamNum": 13
+      },
+      {
+        "SessionId": "946acfef-1862-4702-9351-4ac7f47e59f6",
+        "TeamNum": 14
+      }
+    ],
+
+
+
+    "r-unFullTeam": [],
+    "team": {
+      "Teams": [
+        {
+          "SessionId": "6ead364f-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 4
+        },
+        {
+          "SessionId": "6eb1eafb-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 4
+        },
+        {
+          "SessionId": "6eb06b00-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 4
+        },
+        {
+          "SessionId": "6eb05b32-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 5
+        },
+        {
+          "SessionId": "6eb209e4-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 5
+        },
+        {
+          "SessionId": "6eb5c2cf-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 5
+        },
+        {
+          "SessionId": "6eab5ce6-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 6
+        },
+        {
+          "SessionId": "6eafb6f1-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 6
+        },
+        {
+          "SessionId": "6eb1cbe8-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 6
+        },
+        {
+          "SessionId": "6eb0698c-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 7
+        },
+        {
+          "SessionId": "6eb02027-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 7
+        },
+        {
+          "SessionId": "6eb1f44a-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 7
+        },
+        {
+          "SessionId": "6eab4a27-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 8
+        },
+        {
+          "SessionId": "6eab635e-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 8
+        },
+        {
+          "SessionId": "6eacd0ee-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 8
+        },
+        {
+          "SessionId": "6e94d009-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 9
+        },
+        {
+          "SessionId": "6eab15ad-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 9
+        },
+        {
+          "SessionId": "6eacc9de-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 9
+        },
+        {
+          "SessionId": "6eafb7fc-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 10
+        },
+        {
+          "SessionId": "6eb14d6d-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 10
+        },
+        {
+          "SessionId": "6eb1e590-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 10
+        },
+        {
+          "SessionId": "6eb05729-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 11
+        },
+        {
+          "SessionId": "6eb05ea5-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 11
+        },
+        {
+          "SessionId": "6eab51d5-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 11
+        },
+        {
+          "SessionId": "6eab66a7-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 12
+        },
+        {
+          "SessionId": "6eab6db5-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 12
+        },
+        {
+          "SessionId": "6eafd230-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 12
+        },
+        {
+          "SessionId": "6eab77bd-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 13
+        },
+        {
+          "SessionId": "6eacc58c-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 13
+        },
+        {
+          "SessionId": "6eb0564e-04ef-11ee-95aa-006100a0eb06",
+          "TeamNum": 13
+        }
+      ],
+      "UnFullTeams": [
+        {
+          "TeamNum": 14,
+          "MissingCount": 3
+        }
+      ]
+    }
+  }
+}

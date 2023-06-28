@@ -35,7 +35,7 @@ func NewClientService(handler *HandlerService) *ClientService {
 
 // Login 玩家登录
 func (c *ClientService) Login(ctx context.Context, email string, password string, playerType int) params.Connect {
-	cl := nakama.New(nakama.WithServerKey(params.ServerKey), nakama.WithURL(params.ServerUrl))
+	cl := nakama.New(nakama.WithServerKey(params.Nakama.Key), nakama.WithURL(fmt.Sprintf("%s:%d", params.Nakama.Host, params.Nakama.Port)))
 	if err := cl.AuthenticateEmail(ctx, email, password, true, email); err != nil {
 		xlog.WithField(global.ErrField, err).Fatal("login fail")
 	}
@@ -135,7 +135,7 @@ func (c *ClientService) PartyMatchmaker(partyIds map[string]params.Connect) {
 					WithStringProperties(params.MatchConfig.Config.StringProperties).
 					WithNumericProperties(params.MatchConfig.Config.NumericProperties).Send(context.Background(), connect.Conn)
 				if err != nil {
-					xlog.WithField(global.ErrField, err).Fatal("start matchmaker fail")
+					xlog.WithField(global.ErrField, err).Error("start matchmaker fail")
 				} else {
 					xlog.Debugf("party:%s join matchmaker success\n", partyId)
 				}

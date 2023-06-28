@@ -17,7 +17,7 @@ var Nakama = struct {
 	Key     string `yaml:"key"`
 	HttpKey string `yaml:"httpKey"`
 }{
-	Host:    "http://192.168.1.187",
+	Host:    "http://192.168.1.246",
 	Port:    7350,
 	Key:     "defaultkey",
 	HttpKey: "defaulthttpkey",
@@ -35,10 +35,10 @@ var MatchConfig = struct {
 	PartySize  int
 	Config     AddMatchMakerParams
 }{
-	TotalCount: 1003,
-	PartyCount: 900,
-	Delay:      30, // 延迟5秒后进入
-	PartySize:  3,  // 三人队
+	TotalCount: 55,
+	PartyCount: 15,
+	Delay:      5, // 延迟5秒后进入
+	PartySize:  3, // 三人队
 	Config: AddMatchMakerParams{
 		MinCount: 2,
 		MaxCount: 30,

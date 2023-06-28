@@ -11,6 +11,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/x-module/utils/utils/random"
 	"github.com/x-module/utils/utils/xlog"
 	params2 "go-client/params"
 	"go-client/services"
@@ -22,29 +23,34 @@ import (
 var loginCount = 0
 var group sync.WaitGroup
 
-func getClient(clientService *services.ClientService) {
+func getClient(num int, clientService *services.ClientService) {
+	start := int(time.Now().UnixNano())
+	params2.MatchConfig.PartyCount = random.RandInt(35, 55)
+	params2.MatchConfig.TotalCount = params2.MatchConfig.PartyCount + random.RandInt(15, 25)
 	for i := 0; i < params2.MatchConfig.PartyCount; i++ {
-		go func(i int) {
+		go func(num, i int) {
 			group.Add(1)
-			email := fmt.Sprintf("new-party_%d@adminadminadmin.com", i)
+			email := fmt.Sprintf("new-party_%d_%d@adminadminadmin.com", num, i)
+			log.Println("login:", email)
 			ctx := context.WithValue(context.Background(), "email", email)
 
 			connect := clientService.Login(ctx, email, email, params2.PartyJoin)
 			params2.OnlinePartyPlayerList.Store(email, connect)
 			params2.OnlinePlayerList.Store(connect.UserId, connect)
+			// log.Println("login success")
 			group.Done()
-		}(i)
+		}(num, i+start)
 	}
 	for i := 0; i < params2.MatchConfig.TotalCount-params2.MatchConfig.PartyCount; i++ {
-		go func(i int) {
+		go func(num, i int) {
 			group.Add(1)
-			email := fmt.Sprintf("new-single_%d@adminadminadmin.com", i)
+			email := fmt.Sprintf("new-single_%d_%d@adminadminadmin.com", num, i)
 			ctx := context.WithValue(context.Background(), "email", email)
 			connect := clientService.Login(ctx, email, email, params2.SingleJoin)
 			params2.OnlineSinglePlayerList.Store(email, connect)
 			params2.OnlinePlayerList.Store(connect.UserId, connect)
 			group.Done()
-		}(i)
+		}(num, i+start)
 	}
 }
 func makeParty(clientService *services.ClientService) (map[string]params2.Connect, map[string]params2.Connect) {
@@ -91,7 +97,7 @@ func makeParty(clientService *services.ClientService) (map[string]params2.Connec
 func singleJoin() {
 
 }
-func main() {
+func run(num int, ctx context.Context) {
 	handler := services.NewHandlerService()
 	handler.ConnectHandler = func(ctx context.Context) {
 		loginCount++
@@ -103,7 +109,7 @@ func main() {
 	clientService := services.NewClientService(handler)
 
 	// 客户端登录
-	getClient(clientService)
+	getClient(num, clientService)
 	group.Wait()
 	total := 0
 	params2.OnlinePlayerList.Range(func(key, value any) bool {
@@ -111,7 +117,7 @@ func main() {
 		return true
 	})
 	log.Println("all player login success,count:", total)
-	// // 组件party
+	// 组件party
 	groupPartyIds, singlePartyIds := makeParty(clientService)
 	fmt.Println("group party count:", len(groupPartyIds))
 	fmt.Println("single party count:", len(singlePartyIds))
@@ -120,18 +126,49 @@ func main() {
 
 	// 检查几秒后单个匹配的开始
 	xlog.Debugf("delay party start\n")
-	xlog.Debugf("delay party start\n")
-	xlog.Debugf("delay party start\n")
-	xlog.Debugf("delay party start\n")
-	xlog.Debugf("delay party start\n")
-	xlog.Debugf("delay party start\n")
 	time.Sleep(time.Duration(params2.MatchConfig.Delay) * time.Second)
-	xlog.Debugf("==============delay party start\n")
-	xlog.Debugf("==============delay party start\n")
-	xlog.Debugf("==============delay party start\n")
-	xlog.Debugf("==============delay party start\n")
+	xlog.Debugf("elay party start\n")
 
 	clientService.PartyMatchmaker(singlePartyIds)
 	for {
+		fmt.Print(".")
+		time.Sleep(time.Second)
+		select {
+		case <-ctx.Done(): // ctx.Done()返回一个只读的channel，等待上级通知退出的信号
+			params2.OnlinePartyPlayerList.Range(func(key, value any) bool {
+				_ = value.(params2.Connect).Client.SessionLogout(context.Background())
+				return true
+			})
+			break
+		default:
+		}
+	}
+}
+func main() {
+	i := 2
+	for {
+		i--
+		timeLength := random.RandInt(50, 100)
+		go func(timeLength int) {
+			ctx, cancel := context.WithCancel(context.Background())
+			go run(i, ctx)
+			_ = ctx
+			select {
+			case d := <-time.After(time.Duration(timeLength) * time.Second):
+				fmt.Println("time out")
+				fmt.Println("current Time :", d)
+				cancel()
+				i++
+			}
+		}(timeLength)
+		time.Sleep(time.Second)
+
+		for {
+			if i < 1 {
+				time.Sleep(time.Second)
+			} else {
+				break
+			}
+		}
 	}
 }
